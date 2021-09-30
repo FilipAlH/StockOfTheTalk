@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
-
-<title>Stock of The Talk</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+<title>Stock of the Talk</title>
 </head>
 <body>
 
 <header>
     <nav>
         <div class="nav-wrapper">
-          <div class="brand-logo">Stock Of The Talk<i class="fa-solid fa-comments-dollar"></i></div>
+          <div class="brand-logo">Stock Of The Talk<span><i class="fa-solid fa-comments-dollar"></i></span id="fa-logo"></div>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#about">About Us</a></li>
-            <li><a href="#reddit">Reddit</a></li>
+            <li><a href="https://reddit.com" target="_blank">Reddit</a></li>
+            <li><a href="https://apewisdom.io/" target="_blank">Wore It Better</a></li>
             <li><a href="collapsible.html"><i class="fas fa-sun"></i></a></li>
           </ul>
         </div>
@@ -27,23 +27,25 @@
     <main id="container">
         <div id="sidebar">
             <form id="form">
-                <input type="text" placeholder="Enter ticker" id="search"></input>
+                <input type="text" placeholder="$ Search By Ticker" id="search" maxlength="5"></input>
                 <br>
                 <label for="dateRange">Select a date range:</label>
-                <select name="dateRange" id="dateRange">
+                <select name="time" id="selectdateRange">
                     <option value="day">Last 24-hours</option>
                     <option value="week">Last Week</option>
                     <option value="month">Last Month</option>
                     <option value="year">Last Year</option>
-                  </select>
-                <input type="button" placeholder="search"></input>
+                  </select><br>
+                <button type="button" placeholder="submit">Submit</button>
             </form>
             <br><br>
             <div id="bookmarks">
-                Bookmarks:
+                Saved Stocks:
             </div>
         </div>
-        <div id="content"><h1>Landing Page / Dynamic Content</h1></div>
+        <div id="content">
+            <h1>Landing Page / Dynamic Content</h1>
+        </div>
     </main>
 
  <!-- <div id="uc"> -->
