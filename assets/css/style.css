@@ -58,6 +58,12 @@ label {
     background-color: var(--c1);
     margin: auto;
     text-align: center;
+    background-image:url("../images/stock-trading.jpg");
+    opacity: 0.08;
+}
+
+h1 {z-index: 9;
+
 }
 
 .search {
