@@ -10,7 +10,11 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="./assets/css/style.css">
   <title>Stock of The Talk</title>
 </head>
 
@@ -33,23 +37,26 @@
             <form id="form">
                 <input type="text" placeholder="$ Search By Ticker" id="search" maxlength="5"></input>
                 <br>
-                <label for="dateRange">Select a date range:</label>
+                <label for="dateRange">Popular Stocks:</label>
                 <select name="time" id="selectdateRange">
                     <option value="day">Last 24-hours</option>
                     <option value="week">Last Week</option>
                     <option value="month">Last Month</option>
                     <option value="year">Last Year</option>
                   </select><br>
-                <button type="button" placeholder="submit">Submit</button>
+                <button type="button" placeholder="submit" class="submit">Submit</button>
             </form>
-            <br><br>
-            <div id="bookmarks">
-                Saved Stocks:
+            <br>
+            <div id="pinned">
+              <p>Saved Stocks:</p>
+              <ul id= "pinnedcontent">
+                <li>Dynamically Generated</li>
+              </ul>
             </div>
         </div>
         <div id="content">
             <h1>Landing Page / Dynamic Content</h1>
-    </div>
+        </div>
 
     <!--sam- list feature  -->
 
