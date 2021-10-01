@@ -27,10 +27,8 @@
 // y = x.replaceAll(",", "%2C");
 // z = y.replaceAll("$", "")
 // console.log(z);
-let divElement = document.querySelector("#content");
-
-
-let results = document.querySelector("#content");
+let divElement = $('.list');
+let results = document.querySelector(".stock-content");
 document.body.querySelector("#content")
 let submission = $('.submit')
 submission.on("click", triggerAfterSearch)
@@ -41,8 +39,8 @@ $(document).ready(function () {
 });
 
 function triggerAfterSearch() {
-  divElement.style.backgroundImage = "none";
-  divElement.style.opacity = "1";
+  divElement.css("background-image", "none")
+  divElement.css("opacity", "1")
   let stocks = $('#search').val()
 
   // sam feature of local storage 
@@ -78,9 +76,10 @@ function triggerAfterSearch() {
     console.log(data.quoteResponse.result[0].ask);
     //results.innerHTML = ""
 
-    results.innerHTML += `<p>Company:${data.quoteResponse.result[0].longName}</p`;
-    results.innerHTML += `<p>Symbol:${data.quoteResponse.result[0].symbol}</p`;
-    document.body.querySelector("#content").innerHTML
+    results.innerHTML += `<div>
+    <p>Company:${data.quoteResponse.result[0].longName}</p <br>
+    <p>Symbol:${data.quoteResponse.result[0].symbol}</p
+    </div>`;
     callReddit(stocks)
   })
 }
@@ -138,7 +137,7 @@ function listConstructor(x) {
   list.classList.add("collection-item");
   list.innerHTML = x;
   ulist.appendChild(list);
-  }
+}
 //pseudo code shamsher ignore it for now
 // sam feaure for rendering data from local storage 
 // under work for rendering data 
@@ -151,5 +150,5 @@ function listConstructor(x) {
 // dataList.innerHTML=
 // }
 
-}
+
 

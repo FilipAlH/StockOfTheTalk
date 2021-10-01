@@ -117,3 +117,17 @@ button {
 .modal {
     display: none;
 }
+
+/*this is so the stock and reddit posts go side by side*/
+.stock-content {
+    display: inline-flex;
+}
+
+.reddit-content {
+    display: inline-flex;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+}
