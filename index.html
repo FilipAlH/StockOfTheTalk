@@ -2,26 +2,31 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap" rel="stylesheet">
 
-<title>Stock of The Talk</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Stock of The Talk</title>
 </head>
 
 <body>
-<header>
-    <nav>
+    <header>
+      <nav>
         <div class="nav-wrapper">
-          <div class="brand-logo">Stock Of The Talk<i class="fa-solid fa-comments-dollar"></i></div>
+          <div class="brand-logo">Stock Of The Talk<span><i class="fa-solid fa-comments-dollar"></i></span id="fa-logo"></div>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#about">About Us</a></li>
-            <li><a href="#reddit">Reddit</a></li>
+            <li><a href="https://reddit.com" target="_blank">Reddit</a></li>
+            <li><a href="https://apewisdom.io/" target="_blank">Wore It Better</a></li>
             <li><a href="collapsible.html"><i class="fas fa-sun"></i></a></li>
           </ul>
         </div>
@@ -30,48 +35,71 @@
     <main id="container">
         <div id="sidebar">
             <form id="form">
-                <input type="text" placeholder="Enter ticker" id="search"></input>
+                <input type="text" placeholder="$ Search By Ticker" id="search" maxlength="5"></input>
                 <br>
-                <label for="dateRange">Select a date range:</label>
-                <select name="dateRange" id="dateRange">
+                <label for="dateRange">Popular Stocks:</label>
+                <select name="time" id="selectdateRange">
                     <option value="day">Last 24-hours</option>
                     <option value="week">Last Week</option>
                     <option value="month">Last Month</option>
                     <option value="year">Last Year</option>
-                  </select>
-                <input type="button" placeholder="search"></input>
+                  </select><br>
+                <button type="button" placeholder="submit" class="submit">Submit</button>
             </form>
-            <br><br>
-            <div id="bookmarks">
-                Bookmarks:
+            <br>
+            <div id="pinned">
+              <p>Saved Stocks:</p>
+              <ul id= "pinnedcontent">
+                <!-- here is my code -->
+                <li>Dynamically Generated</li>
+              </ul>
             </div>
         </div>
-        <div id="content"><h1>Landing Page / Dynamic Content</h1></div>
+        <div id="content">
+            <h1>Landing Page / Dynamic Content</h1>
+        </div>
 
-      <!--sam- list feature  -->
+    <!--sam- list feature  -->
 
-      <section class="list">
+    <section class="list">
 
-          <ul class="container">
-              <ul class="collection  genericList">    
-              </ul>
-          </ul>
-      </section>
+      <ul class="container">
+        <ul class="collection  genericList">
+        </ul>
       </ul>
-      </section>
+    </section>
+    </ul>
+    </section>
 
-      <!-- sam list feature ended above -->
-    </main>
+    <!-- sam list feature ended above -->
 
- <!-- <div id="uc"> -->
-<!-- <p>This page is currently under construction.</p>
-<img src ="https://ps.w.org/easy-under-construction/assets/banner-772x250.png"> -->
+    <!-- modal for displaying error -->
+    <!-- Modal Trigger -->
+    <button data-target="modal1" class="btn modal-trigger modal-close modal">Modal</button>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-    <script>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>The stock you have selected is invalid!</h4>
+        <p>Please type in another one.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Return</a>
+      </div>
+    </div>
+    <!--end of modal-->
+  </main>
+
+  <!-- <div id="uc"> -->
+  <!-- <p>This page is currently under construction.</p>
+  <img src ="https://ps.w.org/easy-under-construction/assets/banner-772x250.png"> -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./assets/js/script.js"></script>
 
 </body>
+
+
 </html>
