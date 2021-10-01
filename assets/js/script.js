@@ -46,7 +46,7 @@ function triggerAfterSearch() {
 
   fetch(apiTrending, {
       headers: {
-          'x-api-key': 'aVnUVtehXO852x4lmNcEl4OEakPE0TEf7M6s0TmK',
+          'x-api-key': 'hlmDV4j1kk48BXW9xYHEs7rKzXxcuv393FCkJ8sP',
           'Content-Type': 'application/json'
       }
   }).then(function (response) {
@@ -57,12 +57,12 @@ function triggerAfterSearch() {
       }
   }).then (function(data) {
     console.log(data)
-    if (data.result = "error") {
+    if (data.quoteResponse.result[0] == undefined) {
       console.log("error")
       modal.trigger("click")
     } else return data
   }) .then(function (data) {
-      console.log(data)
+      console.log(data.quoteResponse.result[0])
       callReddit(stocks)
   })
 }
