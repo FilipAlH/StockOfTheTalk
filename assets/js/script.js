@@ -1,14 +1,15 @@
+// Aar //
 
-// Sidebar Element
+baseURL = "https://apewisdom.io/api/v1.0/filter/{filter}";
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     let elems = document.querySelectorAll('.sidenav');
-//     let instances = M.Sidenav.init(elems, options);
-//   });
+document.baseURL;
 
-  // Initialize collapsible (uncomment the lines below if you use the dropdown letiation)
-  // let collapsibleElem = document.querySelector('.collapsible');
-  // let collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+.content {
+    background-image: url("./assets/images/stock-trading.jpg");
+  }
+
+
+// Aar //
 
   // Or with jQuery
 
@@ -55,3 +56,4 @@ function callReddit(stock) {
 }
 
 callReddit(stock)
+

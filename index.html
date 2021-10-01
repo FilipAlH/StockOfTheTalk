@@ -15,39 +15,40 @@
 </head>
 
 <body>
-  <header>
-    <nav>
-      <div class="nav-wrapper">
-        <div class="brand-logo">Stock Of The Talk<i class="fa-solid fa-comments-dollar"></i></div>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#reddit">Reddit</a></li>
-          <li><a href="collapsible.html"><i class="fas fa-sun"></i></a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <main id="container">
-    <div id="sidebar">
-      <form id="form">
-        <input type="text" placeholder="Enter ticker" id="search"></input>
-        <br>
-        <label for="dateRange">Select a date range:</label>
-        <select name="dateRange" id="dateRange">
-          <option value="day">Last 24-hours</option>
-          <option value="week">Last Week</option>
-          <option value="month">Last Month</option>
-          <option value="year">Last Year</option>
-        </select>
-        <input type="button" placeholder="search"></input>
-      </form>
-      <br><br>
-      <div id="bookmarks">
-        Bookmarks:
-      </div>
-    </div>
-    <div id="content">
-      <h1>Landing Page / Dynamic Content</h1>
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <div class="brand-logo">Stock Of The Talk<span><i class="fa-solid fa-comments-dollar"></i></span id="fa-logo"></div>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="https://reddit.com" target="_blank">Reddit</a></li>
+            <li><a href="https://apewisdom.io/" target="_blank">Wore It Better</a></li>
+            <li><a href="collapsible.html"><i class="fas fa-sun"></i></a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main id="container">
+        <div id="sidebar">
+            <form id="form">
+                <input type="text" placeholder="$ Search By Ticker" id="search" maxlength="5"></input>
+                <br>
+                <label for="dateRange">Select a date range:</label>
+                <select name="time" id="selectdateRange">
+                    <option value="day">Last 24-hours</option>
+                    <option value="week">Last Week</option>
+                    <option value="month">Last Month</option>
+                    <option value="year">Last Year</option>
+                  </select><br>
+                <button type="button" placeholder="submit">Submit</button>
+            </form>
+            <br><br>
+            <div id="bookmarks">
+                Saved Stocks:
+            </div>
+        </div>
+        <div id="content">
+            <h1>Landing Page / Dynamic Content</h1>
     </div>
 
     <!--sam- list feature  -->
