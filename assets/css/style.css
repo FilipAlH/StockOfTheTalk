@@ -112,7 +112,7 @@ button {
     color: var(--c1);
     background-color: var(--c4);
     border: 0px;
-    margin: auto;
+}
 
 .modal {
     display: none;
