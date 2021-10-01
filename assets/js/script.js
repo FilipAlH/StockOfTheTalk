@@ -35,3 +35,23 @@ function listConstructor(x){
   listConstructor("sigma");
   listConstructor("beta");
 
+
+//Reddit API call with modal if nothing comes up
+let modal = $('.btnmodal')
+let stock = "AAPL"
+
+function callReddit(stock) {
+  fetch("https://www.reddit.com/r/" + stock + "/new.json?limit=10")
+  .then (function (result) {
+    if (result.status != 200) {
+        modal.trigger("click")
+        return
+    } else {
+      return result.json()
+    }
+}).then (function(data) {
+  console.log(data)
+})
+}
+
+callReddit(stock)
