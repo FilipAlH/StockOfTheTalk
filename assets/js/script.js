@@ -10,11 +10,12 @@
 
 // Aar //
 
-// Or with jQuery
+  // Or with jQuery
+  let stockArray=[];
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
 
-$(document).ready(function () {
-  $('.sidenav').sidenav();
-});
 
 // End of sidebar.
 
@@ -43,7 +44,13 @@ function triggerAfterSearch() {
   divElement.style.backgroundImage = "none";
   divElement.style.opacity = "1";
   let stocks = $('#search').val()
-  console.log(stocks)
+
+  // sam feature of local storage 
+ 
+  stockArray.push(stocks);
+  let x=localStorage.setItem("stockname", JSON.stringify(stockArray));
+  // stockArray.push(x);
+  // console.log(stocks)
   let apiBaseURL = 'https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols='
   let apiTrending = apiBaseURL + stocks;
   console.log(apiTrending)
@@ -131,5 +138,18 @@ function listConstructor(x) {
   list.classList.add("collection-item");
   list.innerHTML = x;
   ulist.appendChild(list);
+  }
+//pseudo code shamsher ignore it for now
+// sam feaure for rendering data from local storage 
+// under work for rendering data 
+// let getStocks= localStorage.getItem("stockname");
+// for(let i=0;i<getStocks.length;i++){
+// let dataList=document.createElement("li");
+// let renderData=document.querySelector("#pinnedcontent");
+// renderData.appendChild(dataList);
+// dataList.textContent=getStocks[i];
+// dataList.innerHTML=
+// }
+
 }
 
