@@ -1,8 +1,23 @@
+// Aar //
+
+baseURL = "https://apewisdom.io/api/v1.0/filter/{filter}";
+
+document.baseURL;
+
+.content {
+    background-image: url("./assets/images/stock-trading.jpg");
+  }
 
 
+// Aar //
 
+  // Or with jQuery
 
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
 
+  // End of sidebar.
 
 //base on trending [A,B,C]
 //create a loop that remove '$' sign and add %2C starting from second object in the Array and then concatenate all in a string
@@ -27,21 +42,6 @@ fetch(apiTrending, {
 }).then(function (data) {
     console.log(data)
 })
-fetch('https://www.reddit.com/r/javascript/hot.json')
-  .then(function(res) {
-    return res.json();   // Convert the data into JSON
-  })
-  .then(function(data) {
-    console.log(data);   // Logs the data to the console
-  })
-  .catch(function(err) {
-    console.log(err);   // Log error if any
-  });
-
-
-
-
-
 
 //then 3 top rated get put in to yahoo finance api and we fetch the data we need to 
 //diplay the top 3 stocks on webpage.
@@ -54,7 +54,42 @@ fetch('https://www.reddit.com/r/javascript/hot.json')
 //     console.log(data)
 // })
 
+//  same generic list creator and appending function
+
+function listConstructor(x){
+  let ulist=document.querySelector(".genericList");
+ 
+  let list=document.createElement("li");
+  list.classList.add("collection-item");
+  list.innerHTML=x;
+  ulist.appendChild(list);
+  }
+  
+  // call function example
+  listConstructor("alpha");
+  listConstructor("uranium");
+  listConstructor("sigma");
+  listConstructor("beta");
 
 
+//Reddit API call with modal if nothing comes up
+let modal = $('.btnmodal')
+let stock = "AAPL"
+
+function callReddit(stock) {
+  fetch("https://www.reddit.com/r/" + stock + "/new.json?limit=10")
+  .then (function (result) {
+    if (result.status != 200) {
+        modal.trigger("click")
+        return
+    } else {
+      return result.json()
+    }
+}).then (function(data) {
+  console.log(data)
+})
+}
+
+callReddit(stock)
 
 

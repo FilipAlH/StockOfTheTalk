@@ -1,5 +1,77 @@
-#uc {
-    text-align: center;
+* {
+    padding: 0px;
+    margin: 0px;
 }
 
-/* placeholder round 2*/
+:root {
+    --c1: #E8ECF1;
+    --c2: #B5CFD8;
+    --c3: #7393A7;
+    --c4: #6C737E;
+
+  }
+
+  nav .brand-logo {
+    margin-left: 10px;
+}
+
+nav .brand-logo i, nav .brand-logo [class^="mdi-"], nav .brand-logo [class*="mdi-"], nav .brand-logo i.material-icons {
+    float: right;
+    margin-left: 5px;
+}
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+    background-color: var(--c1);
+    border: var(--c4);
+    border-bottom: 1px solid #9e9e9e;
+}
+
+.nav-wrapper {
+    background-color: var(--c3);
+}
+
+#container { 
+    display: flex;
+    width: 100vw;
+    border-bottom: 10px;
+    border-color: var(--c3);
+}
+#sidebar {
+    width: 20vw;
+    height: 90vh;
+    background-color: var(--c2);
+    margin: 1px;
+    box-shadow: var(--col4);
+}
+
+select {display: inline;}
+
+label {
+ font-size: 1.1rem;
+ color: var(--c4);
+ text-align: center;
+}
+
+#content {
+    width: 100vw;
+    height: 90vh;
+    background-color: var(--c1);
+    margin: auto;
+    text-align: center;
+    background-image:url("../images/stock-trading.jpg");
+    opacity: 0.08;
+}
+
+h1 {z-index: 9;
+
+}
+
+.search {
+    background-color: var(--c1);
+    width: 18vw;
+}
+
+.dateRange {
+     display: inline;
+}
+
