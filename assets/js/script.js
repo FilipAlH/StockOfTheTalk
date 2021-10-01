@@ -57,12 +57,12 @@ function triggerAfterSearch() {
       }
   }).then (function(data) {
     console.log(data)
-    if (data.result = "error") {
+    if (data.quoteResponse.result[0] == undefined) {
       console.log("error")
       modal.trigger("click")
     } else return data
   }) .then(function (data) {
-      console.log(data)
+      console.log(data.quoteResponse.result[0])
       callReddit(stocks)
   })
 }
