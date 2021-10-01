@@ -2,76 +2,99 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 
-<title>Stock of The Talk</title>
+  <title>Stock of The Talk</title>
 </head>
 
 <body>
-<header>
+  <header>
     <nav>
-        <div class="nav-wrapper">
-          <div class="brand-logo">Stock Of The Talk<i class="fa-solid fa-comments-dollar"></i></div>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#reddit">Reddit</a></li>
-            <li><a href="collapsible.html"><i class="fas fa-sun"></i></a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main id="container">
-        <div id="sidebar">
-            <form id="form">
-                <input type="text" placeholder="Enter ticker" id="search"></input>
-                <br>
-                <label for="dateRange">Select a date range:</label>
-                <select name="dateRange" id="dateRange">
-                    <option value="day">Last 24-hours</option>
-                    <option value="week">Last Week</option>
-                    <option value="month">Last Month</option>
-                    <option value="year">Last Year</option>
-                  </select>
-                <input type="button" placeholder="search"></input>
-            </form>
-            <br><br>
-            <div id="bookmarks">
-                Bookmarks:
-            </div>
-        </div>
-        <div id="content"><h1>Landing Page / Dynamic Content</h1></div>
+      <div class="nav-wrapper">
+        <div class="brand-logo">Stock Of The Talk<i class="fa-solid fa-comments-dollar"></i></div>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#reddit">Reddit</a></li>
+          <li><a href="collapsible.html"><i class="fas fa-sun"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main id="container">
+    <div id="sidebar">
+      <form id="form">
+        <input type="text" placeholder="Enter ticker" id="search"></input>
+        <br>
+        <label for="dateRange">Select a date range:</label>
+        <select name="dateRange" id="dateRange">
+          <option value="day">Last 24-hours</option>
+          <option value="week">Last Week</option>
+          <option value="month">Last Month</option>
+          <option value="year">Last Year</option>
+        </select>
+        <input type="button" placeholder="search"></input>
+      </form>
+      <br><br>
+      <div id="bookmarks">
+        Bookmarks:
+      </div>
+    </div>
+    <div id="content">
+      <h1>Landing Page / Dynamic Content</h1>
+    </div>
 
-      <!--sam- list feature  -->
+    <!--sam- list feature  -->
 
-      <section class="list">
+    <section class="list">
 
-          <ul class="container">
-              <ul class="collection  genericList">    
-              </ul>
-          </ul>
-      </section>
+      <ul class="container">
+        <ul class="collection  genericList">
+        </ul>
       </ul>
-      </section>
+    </section>
+    </ul>
+    </section>
 
-      <!-- sam list feature ended above -->
-    </main>
+    <!-- sam list feature ended above -->
 
- <!-- <div id="uc"> -->
-<!-- <p>This page is currently under construction.</p>
-<img src ="https://ps.w.org/easy-under-construction/assets/banner-772x250.png"> -->
+    <!-- modal for displaying error -->
+    <button type="button" class="btnmodal btn-primary d-none" data-bs-toggle="modal"
+      data-bs-target="#exampleModal"></button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Oops! Location not found!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            The location you have entered is invalid! Please type in the name of a city.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end of modal-->
+  </main>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-    <script>
+  <!-- <div id="uc"> -->
+  <!-- <p>This page is currently under construction.</p>
+  <img src ="https://ps.w.org/easy-under-construction/assets/banner-772x250.png"> -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+
 </body>
 
 </html>
