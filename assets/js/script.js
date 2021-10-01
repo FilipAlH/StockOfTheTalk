@@ -26,13 +26,22 @@
 // y = x.replaceAll(",", "%2C");
 // z = y.replaceAll("$", "")
 // console.log(z);
+let divElement =document.querySelector("#content");
 
 
-
+let results = document.querySelector("#content");
+document.body.querySelector("#content")
 let submission = $('.submit')
 submission.on("click", triggerAfterSearch)
+//modal event listener
+let modal = $('.modal-trigger')
+$(document).ready(function(){
+  $('.modal').modal();
+});
 
 function triggerAfterSearch() {
+  divElement.style.backgroundImage="none";
+  divElement.style.opacity="1";
   let stocks = $('#search').val()
   console.log(stocks)
   let apiBaseURL = 'https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols='
@@ -41,12 +50,11 @@ function triggerAfterSearch() {
 
   fetch(apiTrending, {
       headers: {
-          'x-api-key': 'aVnUVtehXO852x4lmNcEl4OEakPE0TEf7M6s0TmK',
+          'x-api-key': 'hlmDV4j1kk48BXW9xYHEs7rKzXxcuv393FCkJ8sP',
           'Content-Type': 'application/json'
       }
   }).then(function (response) {
       if (response.status != 200) {
-        modal.trigger("click")
         return
       } else {
         return response.json()
@@ -55,27 +63,29 @@ function triggerAfterSearch() {
       console.log(data);
       console.log(data.quoteResponse.result[0].ask);
     //results.innerHTML = ""
-    result.innerHTML += `<h3>${data.quateResponse.result[0].ask}</h3`;
+    
+    results.innerHTML += `<p>Company:${data.quoteResponse.result[0].longName}</p`;
+    results.innerHTML += `<p>Symbol:${data.quoteResponse.result[0].symbol}</p`;
     document.body.querySelector("#content").innerHTML
+    
 
       
       callReddit(stocks)
   })
 }
 
-//Reddit API call with modal if nothing comes up
-let modal = $('.btnmodal')
-
+//Reddit API call
 function callReddit(stocks) {
   fetch("https://www.reddit.com/r/" + stocks + "/new.json?limit=10")
   .then (function (result) {
     if (result.status != 200) {
-        modal.trigger("click")
         return
     } else {
       return result.json()
     }
-}).then (function(data) {
+}) .then (function(data) {
+    let list = $('.genericList')
+    list.empty()
     console.log(data)
     for (i = 0; i < 10; i++) {
       let thumbnail = data.data.children[i].data.thumbnail
@@ -118,9 +128,4 @@ function listConstructor(x){
   list.innerHTML=x;
   ulist.appendChild(list);
   }
-
-
-
-
-
 
