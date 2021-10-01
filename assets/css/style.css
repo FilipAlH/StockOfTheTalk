@@ -50,9 +50,10 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     width: 100vw;
     border-bottom: 10px;
     border-color: var(--c3);
+    min-height: 90vh;
 }
 #sidebar {
-    height: 90vh;
+    min-height: 90vh;
     background-color: var(--c2);
     margin: 1px;
     box-shadow: var(--col4);
@@ -64,7 +65,7 @@ label {
  color: var(--c4);
 }
 
-#content {
+.list {
     width: 100vw;
     max-height: 90vh;
     height: 90vh;
@@ -76,8 +77,8 @@ label {
     
 }
 
-h1 {z-index: 9;
-
+#content ul {
+    width: 80vw;
 }
 
 .search {
@@ -102,7 +103,7 @@ label {
 }
 
 label, p, .bookmarks {
-    font-family: 'Gemunu Libre', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     text-align: center;
 }
@@ -114,5 +115,5 @@ button {
     margin: auto;
 
 .modal {
-    display: none
+    display: none;
 }
