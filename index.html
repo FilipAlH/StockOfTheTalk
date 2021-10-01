@@ -73,22 +73,17 @@
     <!-- sam list feature ended above -->
 
     <!-- modal for displaying error -->
-    <button type="button" class="btnmodal btn-primary d-none" data-bs-toggle="modal"
-      data-bs-target="#exampleModal"></button>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Oops! Location not found!</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            The location you have entered is invalid! Please type in the name of a city.
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
+    <!-- Modal Trigger -->
+    <button data-target="modal1" class="btn modal-trigger modal-close modal">Modal</button>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>The stock you have selected is invalid!</h4>
+        <p>Please type in another one.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Return</a>
       </div>
     </div>
     <!--end of modal-->
