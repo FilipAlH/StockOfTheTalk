@@ -46,7 +46,7 @@ function triggerAfterSearch() {
 
   fetch(apiTrending, {
       headers: {
-          'x-api-key': 'aVnUVtehXO852x4lmNcEl4OEakPE0TEf7M6s0TmK',
+          'x-api-key': 'hlmDV4j1kk48BXW9xYHEs7rKzXxcuv393FCkJ8sP',
           'Content-Type': 'application/json'
       }
   }).then(function (response) {
