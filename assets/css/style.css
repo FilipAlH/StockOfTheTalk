@@ -121,13 +121,19 @@ button {
 /*this is so the stock and reddit posts go side by side*/
 .stock-content {
     display: inline-flex;
+    font-weight: bold;
 }
+
 
 .reddit-content {
     display: inline-flex;
+
 }
 
 .list {
     display: flex;
     flex-direction: row;
+}
+.positive{
+    color:green;
 }
