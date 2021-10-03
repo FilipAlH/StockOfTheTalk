@@ -43,10 +43,12 @@ function triggerAfterSearch() {
   divElement.css("opacity", "1")
   let stocks = $('#search').val()
 
-  // sam feature of local storage 
 
-  stockArray.push(stocks);
-  let x = localStorage.setItem("stockname", JSON.stringify(stockArray));
+  // sam feature of local storage 
+   
+  let stockData=stockArray.push(stocks);
+  let x=localStorage.setItem("stockname",stockArray);
+
   // stockArray.push(x);
   // console.log(stocks)
   let apiBaseURL = 'https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols='
@@ -89,6 +91,8 @@ function triggerAfterSearch() {
     
     callReddit(stocks)
   })
+  
+ 
 }
 
 //Reddit API call
@@ -122,6 +126,7 @@ function callReddit(stocks) {
         }
       }
     })
+   
 }
 
 //then 3 top rated get put in to yahoo finance api and we fetch the data we need to 
@@ -145,17 +150,23 @@ function listConstructor(x) {
   list.innerHTML = x;
   ulist.appendChild(list);
 }
-//pseudo code shamsher ignore it for now
-// sam feaure for rendering data from local storage 
-// under work for rendering data 
-// let getStocks= localStorage.getItem("stockname");
-// for(let i=0;i<getStocks.length;i++){
-// let dataList=document.createElement("li");
-// let renderData=document.querySelector("#pinnedcontent");
-// renderData.appendChild(dataList);
-// dataList.textContent=getStocks[i];
-// dataList.innerHTML=
-// }
 
-//https:yfapi.net/v8/finance/chart?interval=1d&range=1mo&symbols=AAPL%2CMSFT'
-
+// sam feature for rendering the fav stocks
+function renderFavStocks(){
+for(let i=0;i<localStorage.length;i++){
+  const value=localStorage.getItem("stockname");
+  
+  
+  let z=value.split(",");
+  
+  for(let d=0;d<z.length;d++){
+    let stockData=document.querySelector("#pinnedcontent");
+    let listData=document.createElement("li");
+    stockData.appendChild(listData);
+    listData.innerHTML=z[d];
+  
+  }
+  }
+  
+}
+renderFavStocks()
