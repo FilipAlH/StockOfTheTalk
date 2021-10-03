@@ -1,2 +1,4 @@
 # StockOfTheTalk
-This application aims to track the trending topics of the internet and suggest relevant stocks, whether those stocks are good buys or good sells are up to the users discretion. 
+This application aims to glance at the stock of the your choice and return current information regarding it.
+
+website: https://filipalh.github.io/StockOfTheTalk/

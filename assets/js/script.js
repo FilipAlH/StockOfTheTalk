@@ -10,11 +10,11 @@
 
 // Aar //
 
-  // Or with jQuery
-  let stockArray=[];
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
+// Or with jQuery
+let stockArray = [];
+$(document).ready(function () {
+  $('.sidenav').sidenav();
+});
 
 
 // End of sidebar.
@@ -43,10 +43,12 @@ function triggerAfterSearch() {
   divElement.css("opacity", "1")
   let stocks = $('#search').val()
 
+
   // sam feature of local storage 
- 
-  stockArray.push(stocks);
-  let x=localStorage.setItem("stockname", JSON.stringify(stockArray));
+   
+  let stockData=stockArray.push(stocks);
+  let x=localStorage.setItem("stockname",stockArray);
+
   // stockArray.push(x);
   // console.log(stocks)
   let apiBaseURL = 'https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols='
@@ -55,7 +57,7 @@ function triggerAfterSearch() {
 
   fetch(apiTrending, {
     headers: {
-      'x-api-key': 'hlmDV4j1kk48BXW9xYHEs7rKzXxcuv393FCkJ8sP',
+      'x-api-key': 'DTMmToV3kA9HZks7xTrGv3dngq8nXgoJ26jPMmGu',
       'Content-Type': 'application/json'
     }
   }).then(function (response) {
@@ -73,15 +75,24 @@ function triggerAfterSearch() {
   }).then(function (data) {
     console.log(data.quoteResponse.result[0])
     console.log(data);
-    console.log(data.quoteResponse.result[0].ask);
-    //results.innerHTML = ""
+    results.innerHTML = ""
 
     results.innerHTML += `<div>
-    <p>Company:${data.quoteResponse.result[0].longName}</p <br>
-    <p>Symbol:${data.quoteResponse.result[0].symbol}</p
+    <h3>Company:${data.quoteResponse.result[0].longName}</h3> <br>
+    <p>Symbol:${data.quoteResponse.result[0].symbol}</p>
+    <p>Exchange:${data.quoteResponse.result[0].fullExchangeName} - Real Time Price. Currency in ${data.quoteResponse.result[0].currency}</p>
+    <h3>${data.quoteResponse.result[0].regularMarketPrice.toFixed(2)}(${data.quoteResponse.result[0].regularMarketChange.toFixed(2)}) (${data.quoteResponse.result[0].regularMarketChangePercent.toFixed(2)} %)</h3>
+    <p>Market Volume:${data.quoteResponse.result[0].regularMarketVolume}
+    <p>Daily High:${data.quoteResponse.result[0].regularMarketDayHigh.toFixed(2)}
+    <p>Daily Low:${data.quoteResponse.result[0].regularMarketDayLow.toFixed(2)}
+     
     </div>`;
+    
+    
     callReddit(stocks)
   })
+  
+ 
 }
 
 //Reddit API call
@@ -115,6 +126,7 @@ function callReddit(stocks) {
         }
       }
     })
+   
 }
 
 //then 3 top rated get put in to yahoo finance api and we fetch the data we need to 
@@ -138,19 +150,8 @@ function listConstructor(x) {
   list.innerHTML = x;
   ulist.appendChild(list);
 }
-//pseudo code shamsher ignore it for now
-// sam feaure for rendering data from local storage 
-// under work for rendering data 
-// let getStocks= localStorage.getItem("stockname");
-// for(let i=0;i<getStocks.length;i++){
-// let dataList=document.createElement("li");
-// let renderData=document.querySelector("#pinnedcontent");
-// renderData.appendChild(dataList);
-// dataList.textContent=getStocks[i];
-// dataList.innerHTML=
-// }
 
-//jqueryUI autocomplete
+//jqueryUI autocomplete - doesn't work
 $(function () {
   let stocknames = [
     "AAPL",
@@ -174,3 +175,23 @@ $(function () {
     source: stocknames,
   });
 });
+
+// sam feature for rendering the fav stocks
+function renderFavStocks(){
+for(let i=0;i<localStorage.length;i++){
+  const value=localStorage.getItem("stockname");
+  
+  
+  let z=value.split(",");
+  
+  for(let d=0;d<z.length;d++){
+    let stockData=document.querySelector("#pinnedcontent");
+    let listData=document.createElement("li");
+    stockData.appendChild(listData);
+    listData.innerHTML=z[d];
+  
+  }
+  }
+  
+}
+renderFavStocks()
