@@ -150,5 +150,27 @@ function listConstructor(x) {
 // dataList.innerHTML=
 // }
 
-
-
+//jqueryUI autocomplete
+$(function () {
+  let stocknames = [
+    "AAPL",
+    "AMC",
+    "MSFT",
+    "FB",
+    "TSLA",
+    "JPM",
+    "NVDA",
+    "V",
+    "BAC",
+    "JNJ",
+    "BABA",
+    "WMT",
+    "MA",
+    "PG",
+    "NKE",
+    "AMZN"
+  ];
+  $('#search').autocomplete({
+    source: stocknames,
+  });
+});
