@@ -6,14 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Stock of The Talk</title>
 </head>
@@ -37,32 +36,23 @@
             <form id="form">
                 <input type="text" placeholder="$ Search By Ticker" id="search" maxlength="5"></input>
                 <br>
-                <label for="dateRange">Popular Stocks:</label>
-                <select name="time" id="selectdateRange">
-                    <option value="day">Last 24-hours</option>
-                    <option value="week">Last Week</option>
-                    <option value="month">Last Month</option>
-                    <option value="year">Last Year</option>
-                  </select><br>
-                <button type="button" placeholder="submit" class="submit">Submit</button>
+                <button type="submit" placeholder="submit" class="submit">Submit</button>
             </form>
             <br>
             <div id="pinned">
               <p>Saved Stocks:</p>
-              <ul id= "pinnedcontent">
-                <li>Dynamically Generated</li>
-              </ul>
+              <ul id="pinnedcontent">
             </div>
         </div>
+
         <section class="list">
+          <div class="stock-content"> </div>
+          <div class="reddit-content">
           <ul class="container content">
             <ul class="collection  genericList">
             </ul>
           </ul>
-        </section>
-        </ul>
-        </section>
-
+        </div>
 
     <!-- modal for displaying error -->
     <!-- Modal Trigger -->
@@ -86,10 +76,12 @@
   <img src ="https://ps.w.org/easy-under-construction/assets/banner-772x250.png"> -->
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./assets/js/script.js"></script>
 
 </body>
+
 
 </html>

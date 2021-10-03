@@ -15,4 +15,3 @@ Website Mockup:
 <img width="1434" alt="Deployed Project Screenshot Screen Shot" src="https://github.com/FilipAlH/StockOfTheTalk/blob/main/Assets/images/screenshot.png">
 
 You do not need to read this README to access this assignment.
-

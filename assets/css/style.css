@@ -74,6 +74,7 @@ label {
     text-align: center;
     background-image:url("../images/stock-trading.jpg");
     opacity: 0.08;
+    
 }
 
 #content ul {
@@ -111,8 +112,28 @@ button {
     color: var(--c1);
     background-color: var(--c4);
     border: 0px;
-    margin: auto;
+}
 
 .modal {
     display: none;
+}
+
+/*this is so the stock and reddit posts go side by side*/
+.stock-content {
+    display: inline-flex;
+    font-weight: bold;
+}
+
+
+.reddit-content {
+    display: inline-flex;
+
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+}
+.positive{
+    color:green;
 }
