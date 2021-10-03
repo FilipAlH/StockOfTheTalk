@@ -151,6 +151,31 @@ function listConstructor(x) {
   ulist.appendChild(list);
 }
 
+//jqueryUI autocomplete - doesn't work
+$(function () {
+  let stocknames = [
+    "AAPL",
+    "AMC",
+    "MSFT",
+    "FB",
+    "TSLA",
+    "JPM",
+    "NVDA",
+    "V",
+    "BAC",
+    "JNJ",
+    "BABA",
+    "WMT",
+    "MA",
+    "PG",
+    "NKE",
+    "AMZN"
+  ];
+  $('#search').autocomplete({
+    source: stocknames,
+  });
+});
+
 // sam feature for rendering the fav stocks
 function renderFavStocks(){
 for(let i=0;i<localStorage.length;i++){
