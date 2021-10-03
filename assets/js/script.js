@@ -5,24 +5,31 @@ $(document).ready(function () {
 });
 
 // End of sidebar.
+let stockData = $("#pinnedcontent");
 
 
 let divElement = $('.list');
 let results = document.querySelector(".stock-content");
 document.body.querySelector("#content")
 let submission = $('.submit')
-submission.on("click", triggerAfterSearch)
+
+submission.on("click", function(event){
+  event.preventDefault()
+  triggerAfterSearch($('#search').val())
+})
 //modal event listener
 let modal = $('.modal-trigger')
 $(document).ready(function () {
   $('.modal').modal();
 });
+
+
 //removes background and calls the fetches
-function triggerAfterSearch() {
+function triggerAfterSearch(stock) {
   divElement.css("background-image", "none")
   divElement.css("opacity", "1")
-  let stocks = $('#search').val()
 
+  let stocks = stock
   let stockArray = []
   stockArray.push(stocks)
   console.log(stockArray)
@@ -45,11 +52,10 @@ function triggerAfterSearch() {
     localStorage.setItem("stockArray", stockArray)
     console.log(stockArray)
 
-    let stockData = $("#pinnedcontent");
     stockData.empty()
 
     for(let i = 0; i < stockArray.length; i++){
-      stockData.append(`<li>${stockArray[i]}</li>`);
+      stockData.append(`<form><button type="submit" class="storedButton" id="storedButton">${stockArray[i]}</button></form>`);
     }
   }
   renderFavStocks()
@@ -60,7 +66,7 @@ function triggerAfterSearch() {
 
   fetch(apiTrending, {
     headers: {
-      'x-api-key': 'DTMmToV3kA9HZks7xTrGv3dngq8nXgoJ26jPMmGu',
+      'x-api-key': 'aVnUVtehXO852x4lmNcEl4OEakPE0TEf7M6s0TmK',
       'Content-Type': 'application/json'
     }
   }).then(function (response) {
@@ -71,7 +77,7 @@ function triggerAfterSearch() {
     }
   }).then(function (data) {
     console.log(data)
-    if (data.quoteResponse.result[0] == undefined) {
+    if (!data.quoteResponse.result[0]) {
       console.log("error")
       modal.trigger("click")
     } else return data
@@ -100,33 +106,39 @@ function triggerAfterSearch() {
 
 //Reddit API call
 function callReddit(stocks) {
-  fetch("https://www.reddit.com/r/" + stocks + "/new.json?limit=10")
+  fetch("https://www.reddit.com/r/" + stocks + "/new.json?limit=5")
     .then(function (result) {
-      if (result.status == 404) {
+      if (result.status != 200) {
         return
       } else {
         return result.json()
       }
     }).then(function (data) {
-      let list = $('.genericList')
-      list.empty()
-      console.log(data)
-      for (i = 0; i < 5; i++) {
-        let thumbnail = data.data.children[i].data.thumbnail
-        let title = data.data.children[i].data.title
-        let link = data.data.children[i].data.permalink
+      if (data) {
+        let list = $('.genericList')
+        list.empty()
+        console.log(data)
+        for (i = 0; i < 5; i++) {
+          let thumbnail = data.data.children[i].data.thumbnail
+          let title = data.data.children[i].data.title
+          let link = data.data.children[i].data.permalink
 
-        if (thumbnail != "self") {
-          listConstructor(`<img src="${thumbnail}"><br>
-        <p>${title}</p>
-        <a href="https://reddit.com${link}">Read more!</a>
-        `)
-        } else {
-          listConstructor(`
-        <p>${title}</p>
-        <a href="https://reddit.com${link}">Read more!</a>
-        `)
+          if (thumbnail != "self") {
+            listConstructor(`<img src="${thumbnail}"><br>
+          <p>${title}</p>
+          <a href="https://reddit.com${link}">Read more!</a>
+          `)
+          } else {
+            listConstructor(`
+          <p>${title}</p>
+          <a href="https://reddit.com${link}">Read more!</a>
+          `)
+          }
         }
+      } else {
+        let list = $('.genericList')
+        list.empty()
+        listConstructor(`<p> Oops, It looks like there is no Reddit community for this stock!</p>`)
       }
     })
    
@@ -167,3 +179,9 @@ $(function () {
   });
 });
 
+stockData.on("click", function(event){
+  event.preventDefault()
+  fromSave = event.target.innerText
+  console.log(fromSave)
+  triggerAfterSearch(fromSave)
+})
