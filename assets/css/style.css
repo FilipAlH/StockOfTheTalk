@@ -137,3 +137,10 @@ button {
 .positive{
     color:green;
 }
+
+#storedButton {
+    border: none;
+    background-color: var(--c3);
+    color: white;
+    width: 100%;
+}
