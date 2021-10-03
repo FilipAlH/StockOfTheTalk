@@ -10,11 +10,11 @@
 
 // Aar //
 
-  // Or with jQuery
-  let stockArray=[];
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
+// Or with jQuery
+let stockArray = [];
+$(document).ready(function () {
+  $('.sidenav').sidenav();
+});
 
 
 // End of sidebar.
@@ -45,12 +45,10 @@ function triggerAfterSearch() {
 
 
   // sam feature of local storage 
- 
-  
+   
   let stockData=stockArray.push(stocks);
   let x=localStorage.setItem("stockname",stockArray);
- 
- 
+
   // stockArray.push(x);
   // console.log(stocks)
   let apiBaseURL = 'https://yfapi.net/v6/finance/quote?region=US&lang=en&symbols='
@@ -59,7 +57,7 @@ function triggerAfterSearch() {
 
   fetch(apiTrending, {
     headers: {
-      'x-api-key': 'hlmDV4j1kk48BXW9xYHEs7rKzXxcuv393FCkJ8sP',
+      'x-api-key': 'DTMmToV3kA9HZks7xTrGv3dngq8nXgoJ26jPMmGu',
       'Content-Type': 'application/json'
     }
   }).then(function (response) {
@@ -77,13 +75,20 @@ function triggerAfterSearch() {
   }).then(function (data) {
     console.log(data.quoteResponse.result[0])
     console.log(data);
-    console.log(data.quoteResponse.result[0].ask);
-    //results.innerHTML = ""
+    results.innerHTML = ""
 
     results.innerHTML += `<div>
-    <p>Company:${data.quoteResponse.result[0].longName}</p <br>
-    <p>Symbol:${data.quoteResponse.result[0].symbol}</p
+    <h3>Company:${data.quoteResponse.result[0].longName}</h3> <br>
+    <p>Symbol:${data.quoteResponse.result[0].symbol}</p>
+    <p>Exchange:${data.quoteResponse.result[0].fullExchangeName} - Real Time Price. Currency in ${data.quoteResponse.result[0].currency}</p>
+    <h3>${data.quoteResponse.result[0].regularMarketPrice.toFixed(2)}(${data.quoteResponse.result[0].regularMarketChange.toFixed(2)}) (${data.quoteResponse.result[0].regularMarketChangePercent.toFixed(2)} %)</h3>
+    <p>Market Volume:${data.quoteResponse.result[0].regularMarketVolume}
+    <p>Daily High:${data.quoteResponse.result[0].regularMarketDayHigh.toFixed(2)}
+    <p>Daily Low:${data.quoteResponse.result[0].regularMarketDayLow.toFixed(2)}
+     
     </div>`;
+    
+    
     callReddit(stocks)
   })
   
