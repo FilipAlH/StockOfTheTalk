@@ -137,3 +137,14 @@ button {
 .positive{
     color:green;
 }
+h3 {
+    font-size: 2rem;
+    text-align: left;
+    color: var(--c3);
+}
+
+p {font-size: 1.25rem;
+    text-align: left;
+    color: var(--c4);
+
+}
