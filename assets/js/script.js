@@ -66,7 +66,7 @@ function triggerAfterSearch(stock) {
 
   fetch(apiTrending, {
     headers: {
-      'x-api-key': 'aVnUVtehXO852x4lmNcEl4OEakPE0TEf7M6s0TmK',
+      'x-api-key': 'DTMmToV3kA9HZks7xTrGv3dngq8nXgoJ26jPMmGu',
       'Content-Type': 'application/json'
     }
   }).then(function (response) {
