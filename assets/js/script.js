@@ -90,7 +90,7 @@ function triggerAfterSearch(stock) {
     <h3>Company: ${data.quoteResponse.result[0].longName}</h3> <br>
     <p>Symbol: ${data.quoteResponse.result[0].symbol}</p>
     <p>Exchange: ${data.quoteResponse.result[0].fullExchangeName} - Real Time Price. Currency in ${data.quoteResponse.result[0].currency}</p>
-    <h3>${data.quoteResponse.result[0].regularMarketPrice.toFixed(2)}(${data.quoteResponse.result[0].regularMarketChange.toFixed(2)}) (${data.quoteResponse.result[0].regularMarketChangePercent.toFixed(2)} %)</h3>
+    <h3>Direction: ${data.quoteResponse.result[0].regularMarketPrice.toFixed(2)}(${data.quoteResponse.result[0].regularMarketChange.toFixed(2)}) (${data.quoteResponse.result[0].regularMarketChangePercent.toFixed(2)} %)</h3>
     <p>Market Volume: ${data.quoteResponse.result[0].regularMarketVolume}
     <p>Daily High: ${data.quoteResponse.result[0].regularMarketDayHigh.toFixed(2)}
     <p>Daily Low: ${data.quoteResponse.result[0].regularMarketDayLow.toFixed(2)}
@@ -147,10 +147,10 @@ function callReddit(stocks) {
 //  same generic list creator and appending function
 function listConstructor(x) {
   let ulist = document.querySelector(".genericList");
-
   let list = document.createElement("li");
   list.classList.add("collection-item");
   list.innerHTML = x;
+  list.setAttribute("style", "width: 100%; border-radius: 5px; margin: 3px;")
   ulist.appendChild(list);
 }
 

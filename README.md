@@ -14,4 +14,4 @@ Website Mockup:
 
 ![asdasdasdasdasd](https://user-images.githubusercontent.com/89649055/135783668-b788727d-86fb-4b8f-8b90-16b7f6848c9e.png)
 
-You do not need to read this README to access this assignment.
+You do not need to read this README to access this project.

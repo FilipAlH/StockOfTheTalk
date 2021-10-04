@@ -127,6 +127,8 @@ button {
 
 .reddit-content {
     display: inline-flex;
+    width: 60%;
+    flex-wrap: wrap;
 }
 
 .list {
@@ -135,6 +137,20 @@ button {
 }
 .positive{
     color:green;
+}
+
+h3 {
+    font-size: 2rem;
+    text-align: left;
+    color: var(--c3);
+    margin-left: 10px;
+}
+
+p {font-size: 1.25rem;
+    text-align: left;
+    color: var(--c4);
+    margin-left: 10px;
+
 }
 
 #storedButton {
@@ -148,4 +164,9 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.submit {
+    margin-left: 50px;
+
 }
