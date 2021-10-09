@@ -7,9 +7,6 @@ $(document).ready(function () {
 // End of sidebar.
 let stockData = $("#pinnedcontent");
 
-// Condition for Bookmarked Stocks
-incStock = false;
-
 
 let divElement = $('.list');
 let results = document.querySelector(".stock-content");
@@ -33,10 +30,9 @@ function triggerAfterSearch(stock) {
   divElement.css("opacity", "1")
   let stocks = stock.toUpperCase();
   let stockArray = []
-  if (incStock) {
   stockArray.push(stocks)
   console.log(stockArray)
-  }
+  
   // sam feature for rendering the fav stocks
   function renderFavStocks(){
     let retrieved = []
@@ -84,7 +80,6 @@ function triggerAfterSearch(stock) {
       console.log("error")
       modal.trigger("click")
     } else 
-    incStock = true;
     return data
   }).then(function (data) {
     console.log(data.quoteResponse.result[0])
