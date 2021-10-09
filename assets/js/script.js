@@ -7,7 +7,6 @@ $(document).ready(function () {
 // End of sidebar.
 let stockData = $("#pinnedcontent");
 
-
 let divElement = $('.list');
 let results = document.querySelector(".stock-content");
 document.body.querySelector("#content")
