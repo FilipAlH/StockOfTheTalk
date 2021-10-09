@@ -7,6 +7,9 @@ $(document).ready(function () {
 // End of sidebar.
 let stockData = $("#pinnedcontent");
 
+// Condition for Bookmarked Stocks
+incStock = false;
+
 
 let divElement = $('.list');
 let results = document.querySelector(".stock-content");
@@ -28,12 +31,12 @@ $(document).ready(function () {
 function triggerAfterSearch(stock) {
   divElement.css("background-image", "none")
   divElement.css("opacity", "1")
-
-  let stocks = stock
+  let stocks = stock.toUpperCase();
   let stockArray = []
+  if (incStock) {
   stockArray.push(stocks)
   console.log(stockArray)
-
+  }
   // sam feature for rendering the fav stocks
   function renderFavStocks(){
     let retrieved = []
@@ -66,7 +69,7 @@ function triggerAfterSearch(stock) {
 
   fetch(apiTrending, {
     headers: {
-      'x-api-key': 'DTMmToV3kA9HZks7xTrGv3dngq8nXgoJ26jPMmGu',
+      'x-api-key': 'aVnUVtehXO852x4lmNcEl4OEakPE0TEf7M6s0TmK',
       'Content-Type': 'application/json'
     }
   }).then(function (response) {
@@ -80,7 +83,9 @@ function triggerAfterSearch(stock) {
     if (!data.quoteResponse.result[0]) {
       console.log("error")
       modal.trigger("click")
-    } else return data
+    } else 
+    incStock = true;
+    return data
   }).then(function (data) {
     console.log(data.quoteResponse.result[0])
     console.log(data);
@@ -154,7 +159,7 @@ function listConstructor(x) {
   ulist.appendChild(list);
 }
 
-//jqueryUI autocomplete - doesn't work
+//jqueryUI autocomplete - now works!
 $(function () {
   let stocknames = [
     "AAPL",
